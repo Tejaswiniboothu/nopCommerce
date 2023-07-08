@@ -1,10 +1,11 @@
 pool:
   name: Default
   vmImage: ubuntu-latest
+
 trigger:
   - develop
-steps:  - 
-- task: DotNetCoreCLI@2
+steps: 
+- task: DotNetCoreCLI@2 
   inputs:
    command: 'build'
 
@@ -12,8 +13,8 @@ steps:  -
   inputs:
     Contents: '**/*.dll'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'ecommerce-application'
-      publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'ecommerce-application'
+    publishLocation: 'Container' 
