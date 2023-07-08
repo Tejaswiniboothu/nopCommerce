@@ -1,9 +1,7 @@
 pool:
   name: Default
   vmImage: ubuntu-latest
-trigger:
-  - devops
-  
+
 steps:  - 
 - task: DotNetCoreCLI@2
   inputs:
