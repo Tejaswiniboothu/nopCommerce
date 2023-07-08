@@ -3,8 +3,8 @@ pool:
   vmImage: ubuntu-latest
 trigger:
   - devops
-steps:
-  - 
+  
+steps:  - 
 - task: DotNetCoreCLI@2
   inputs:
    command: 'build'
